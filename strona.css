@@ -8,37 +8,12 @@ html, body {
 	margin: 0;
 	padding: 0;
 }
-/*------------------LOADER-----------------*/
-#page {
-
-	display: none;
-}
-#loader {
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	width: 100vw;
-	height: 100vh;
-	z-index: 100;
-	background-color: #fff;
-	display: block;
-}
-
-#loader > img {
-	width: 70px;
-	margin: auto;
-	position: relative;
-	top: 49vh;
-	left: 49vw;
-}
 
 /*----------------HEADER--------------*/
 
 header {
 	width: 100%;
-
+	background-image: url('img/banner_bg.png');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-clip: border-box;
@@ -65,7 +40,7 @@ header {
 	width: 100%;
 	background-color: #fff;
 	padding: 20px;
-	box-shadow: 0 4px 26px 7px rgba(0,0,0,0.75);
+	/*box-shadow: 0 4px 26px 7px rgba(0,0,0,0.75);*/
 }
 #gallery {
 	width: 100%;
@@ -84,6 +59,20 @@ header {
 	filter: grayscale(1);
 }
 
+/*show*/
+#show {
+	width: 100%;
+	height: 40px;
+	background-color: #999;
+	cursor: pointer;
+	padding: 10px 0;
+}
+
+#show > img {
+	height: 80%;
+	display: block;
+	margin: 0 auto;
+}
 /*----------------ABOUT----------------*/
 #about {
 	width: 100%;

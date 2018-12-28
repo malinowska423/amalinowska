@@ -13,55 +13,54 @@
 		<link rel="stylesheet" href="galeria/kody/lightbox.css">
 		<link rel="Stylesheet" type="text/css" href="strona.css" />
 		<script>
-			function createGallery(numberOfPhotos){
+			function createGallery(startIndex, endIndex){
 				const content = document.getElementById('gallery');
 				let divHTML = '';
-				for(let i = numberOfPhotos; i > 0; i--){
+				for(let i = endIndex; i >= startIndex; i--){
 					divHTML= divHTML +
 							'<a href="album/photo_'
 							+ i +
 							'.jpg" data-lightbox="album"><img class="thumb" src="album/thumbs/thumb_photo_'
 							+ i +  '.jpg" alt=""/></a>';
 				}
-				content.innerHTML = divHTML;
+				content.innerHTML += divHTML;
+			}
+			function hide(id) {
+				document.getElementById(id).style.display = 'none';
 			}
 		</script>
-		<script type="text/javascript" src="loader.js"></script>
 	</head>
 	<body>
-		<div id="page">
-			<header style="background-image: url('img/banner_bg.png')">
-				<img src="img/malinowska_logo.png" id="banner" alt=""/>
-			</header>
-			<!-- how to add photo:
-            createGallery(numberOfPhotos);-->
-			<div id="content">
-				<article id="gallery">
-					<script>
-						setTimeout(function () {
-							createGallery(145);
-						}, 150);
-					</script>
-				</article>
+	<header>
+		<img src="img/malinowska_logo.png" id="banner" alt=""/>
+	</header>
+	<div id="content">
+		<article id="gallery">
+			<script>
+				createGallery(1, 4);
+			</script>
+		</article>
+	</div>
+	<div id="show" onclick="createGallery(5,145); hide('show');">
+		<img src="img/more.png" alt="more" />
+	</div>
+	<div id="about">
+		<div class="center">
+			<img src="img/malinowska.jpg" alt="" id="about-photo"/>
+			<div id="info">
+				<h1>Ola Malinowska</h1>
+				<p>#photographer #programmer<br>#dreamer</p>
+				<a href="mailto:am@amalinowska.pl" target="_blank">am@amalinowska.pl</a>
 			</div>
-			<div id="about">
-				<div class="center">
-					<img src="img/malinowska.jpg" alt="" id="about-photo"/>
-					<div id="info">
-						<h1>Ola Malinowska</h1>
-						<p>#photographer #programmer<br>#dreamer</p>
-						<a href="mailto:am@amalinowska.pl" target="_blank">am@amalinowska.pl</a>
-					</div>
-					<div id="social">
-						<a href="https://www.instagram.com/olinnn10/" target="_blank" class="social-icon"><img
-								src="img/insta.png"/></a>
-						<a href="am@amalinowska.pl" target="_blank" class="social-icon"><img src="img/mail.png"></a>
-					</div>
-				</div>
+			<div id="social">
+				<a href="https://www.instagram.com/olinnn10/" target="_blank" class="social-icon"><img
+						src="img/insta.png"/></a>
+				<a href="am@amalinowska.pl" target="_blank" class="social-icon"><img src="img/mail.png"></a>
 			</div>
-			<footer>2018 &copy; Aleksandra Malinowska | All rights reserved</footer>
 		</div>
-		<script src="galeria/kody/lightbox-plus-jquery.js"></script>
+	</div>
+	<footer>2018 &copy; Aleksandra Malinowska | All rights reserved</footer>
+	<script src="galeria/kody/lightbox-plus-jquery.js"></script>
 		<div id="loader">
 				<img src="img/load.gif" alt=""/>
 		</div>
