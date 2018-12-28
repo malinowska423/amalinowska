@@ -26,44 +26,40 @@
 				content.innerHTML = divHTML;
 			}
 		</script>
-		<script type="text/javascript" src="./lib/jquery-3.3.1.min.js">
-			$(document).on("load", function () {
-				$(#loader).css("display", "block");
-			});
-			$(document).ready(function () {
-				$(#loader).css("display", "none");
-			});
-		</script>
+		<script type="text/javascript" src="loader.js"></script>
 	</head>
 	<body>
-		<div id="loader">
-
-		</div>
-		<header>
-			<img src="img/malinowska_logo.png" id="banner" alt="" />
-		</header>
-		<!-- how to add photo:
-		createGallery(numberOfPhotos);-->
-		<div id="content">
-			<article id="gallery">
-				<script>createGallery(145);</script>
-			</article>
-		</div>
-		<div id="about">
-			<div class="center">
-				<img src="img/malinowska.jpg" alt="" id="about-photo"/>
-				<div id="info">
-					<h1>Ola Malinowska</h1>
-					<p>#photographer #programmer<br>#dreamer</p>
-					<a href="mailto:am@amalinowska.pl" target="_blank">am@amalinowska.pl</a>
-				</div>
-				<div id="social">
-					<a href="https://www.instagram.com/olinnn10/" target="_blank" class="social-icon"><img src="img/insta.png"/></a>
-					<a href="am@amalinowska.pl" target="_blank" class="social-icon"><img src="img/mail.png"></a>
+		<div id="page">
+			<header>
+				<img src="img/malinowska_logo.png" id="banner" alt=""/>
+			</header>
+			<!-- how to add photo:
+            createGallery(numberOfPhotos);-->
+			<div id="content">
+				<article id="gallery">
+					<script>createGallery(145);</script>
+				</article>
+			</div>
+			<div id="about">
+				<div class="center">
+					<img src="img/malinowska.jpg" alt="" id="about-photo"/>
+					<div id="info">
+						<h1>Ola Malinowska</h1>
+						<p>#photographer #programmer<br>#dreamer</p>
+						<a href="mailto:am@amalinowska.pl" target="_blank">am@amalinowska.pl</a>
+					</div>
+					<div id="social">
+						<a href="https://www.instagram.com/olinnn10/" target="_blank" class="social-icon"><img
+								src="img/insta.png"/></a>
+						<a href="am@amalinowska.pl" target="_blank" class="social-icon"><img src="img/mail.png"></a>
+					</div>
 				</div>
 			</div>
+			<footer>2018 &copy; Aleksandra Malinowska | All rights reserved</footer>
 		</div>
-		<footer>2018 &copy; Aleksandra Malinowska | All rights reserved</footer>
 		<script src="galeria/kody/lightbox-plus-jquery.js"></script>
+		<div id="loader">
+				<img src="img/load.gif" alt=""/>
+		</div>
 	</body>
 </html>

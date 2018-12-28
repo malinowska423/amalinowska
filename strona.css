@@ -9,20 +9,29 @@ html, body {
 	padding: 0;
 }
 /*------------------LOADER-----------------*/
-
+#page {
+	display: none;
+}
 #loader {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	right: 0;
 	left: 0;
 	bottom: 0;
 	width: 100vw;
 	height: 100vh;
-	z-index: 3000;
-	display: none;
+	z-index: 100;
+	background-color: #fff;
+	display: block;
 }
 
-
+#loader > img {
+	width: 70px;
+	margin: auto;
+	position: relative;
+	top: 49vh;
+	left: 49vw;
+}
 
 /*----------------HEADER--------------*/
 
