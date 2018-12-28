@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Photo Gallery | Aleksandra Malinowska</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="Keywords" content="malinowska, aleksandra, photo, gallery, olinnn, olinnn10, album" />
+		<meta http-equiv="Content-Language" content="pl" />
+		<meta property="og:title" content="Photo Gallery">
+		<meta property="og:image" content="/img/logo.png">
+		<meta property="og:description" content="Aleksandra Malinowska">
+		<link rel="Shortcut icon" href="img/icon.png" />
+		<link rel="stylesheet" href="galeria/kody/lightbox.css">
+		<link rel="Stylesheet" type="text/css" href="strona.css" />
+		<script>
+			function createGallery(numberOfPhotos){
+				const content = document.getElementById('gallery');
+				let divHTML = '';
+				for(let i = numberOfPhotos; i > 0; i--){
+					divHTML= divHTML +
+							'<a href="album/photo_'
+							+ i +
+							'.jpg" data-lightbox="album"><img class="thumb" src="album/thumbs/thumb_photo_'
+							+ i +  '.jpg" alt=""/></a>';
+				}
+				content.innerHTML = divHTML;
+			}
+		</script>
+	</head>
+	<body>
+		<header>
+			<img src="img/malinowska_logo.png" id="banner" alt="" />
+		</header>
+		<!-- how to add photo:
+		createGallery(numberOfPhotos);-->
+		<div id="content">
+			<article id="gallery">
+				<script>createGallery(145);</script>
+			</article>
+		</div>
+		<div id="about">
+			<div class="center">
+				<img src="img/malinowska.jpg" alt="" id="about-photo"/>
+				<div id="info">
+					<h1>Ola Malinowska</h1>
+					<p>#photographer #programmer<br>#dreamer</p>
+					<a href="mailto:am@amalinowska.pl" target="_blank">am@amalinowska.pl</a>
+				</div>
+				<div id="social">
+					<a href="https://www.instagram.com/olinnn10/" target="_blank" class="social-icon"><img src="img/insta.png"/></a>
+					<a href="am@amalinowska.pl" target="_blank" class="social-icon"><img src="img/mail.png"></a>
+				</div>
+			</div>
+		</div>
+		<footer>2018 &copy; Aleksandra Malinowska | All rights reserved</footer>
+		<script src="galeria/kody/lightbox-plus-jquery.js"></script>
+	</body>
+</html>
