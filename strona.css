@@ -10,6 +10,7 @@ html, body {
 }
 /*------------------LOADER-----------------*/
 #page {
+
 	display: none;
 }
 #loader {
@@ -37,8 +38,7 @@ html, body {
 
 header {
 	width: 100%;
-	background-color: #000;
-	background-image: url("img/banner_bg.png");
+
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-clip: border-box;

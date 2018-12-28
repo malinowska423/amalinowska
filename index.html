@@ -30,14 +30,18 @@
 	</head>
 	<body>
 		<div id="page">
-			<header>
+			<header style="background-image: url('img/banner_bg.png')">
 				<img src="img/malinowska_logo.png" id="banner" alt=""/>
 			</header>
 			<!-- how to add photo:
             createGallery(numberOfPhotos);-->
 			<div id="content">
 				<article id="gallery">
-					<script>createGallery(145);</script>
+					<script>
+						setTimeout(function () {
+							createGallery(145);
+						}, 150);
+					</script>
 				</article>
 			</div>
 			<div id="about">
