@@ -26,8 +26,19 @@
 				content.innerHTML = divHTML;
 			}
 		</script>
+		<script type="text/javascript" src="./lib/jquery-3.3.1.min.js">
+			$(document).on("load", function () {
+				$(#loader).css("display", "block");
+			});
+			$(document).ready(function () {
+				$(#loader).css("display", "none");
+			});
+		</script>
 	</head>
 	<body>
+		<div id="loader">
+
+		</div>
 		<header>
 			<img src="img/malinowska_logo.png" id="banner" alt="" />
 		</header>
