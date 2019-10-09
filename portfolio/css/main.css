@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    border: 1px solid black;
     margin: 0;
     padding: 0;
 }
@@ -21,8 +20,17 @@
 .center {
     width: 100%;
     max-width: 1200px;
+    margin: auto;
 }
 
 body {
     width: 100%;
+}
+
+.photo-background {
+    background-color: #99b3e6;
+    background-attachment: fixed;
+    background-clip: border-box;
+    background-position: center;
+    background-size: 100% auto;
 }
