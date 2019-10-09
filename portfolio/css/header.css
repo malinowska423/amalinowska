@@ -2,14 +2,13 @@
 header {
     --header-title-font: 'Open Sans Condensed', sans-serif;
     --header-subtitle-font: 'Rajdhani', sans-serif;
-    --header-light-color: #eee;
-    width: 100%;
+    --header-light-color: #FFF;
     height: 85vh;
     position: relative;
-    background-image: url("../img/main_photo_2.jpg"), linear-gradient(to right,#DDD 0%,#AAA 100%);
+    background-image: url("../img/main_photo_2.jpg");
     background-position: bottom;
     color: var(--header-light-color);
-    background-blend-mode: multiply;
+    background-blend-mode: overlay;
 }
 
 .header-title {

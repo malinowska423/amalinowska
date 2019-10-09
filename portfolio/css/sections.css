@@ -1,0 +1,10 @@
+#profile-photo {
+    display: block;
+    float: right;
+    height: 250px;
+    max-width: 40%;
+}
+
+#profile-photo + .main-article {
+    width: 60%;
+}
