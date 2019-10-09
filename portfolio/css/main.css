@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    border: 1px solid black;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-basic-font: 'Times New Roman';
+    --main-header-font: 'Helvetica';
+}
+
+.basic-font {
+    font-family: var(--main-basic-font);
+}
+
+.header-font {
+    font-family: var(--main-header-font);
+}
+
+.center {
+    width: 100%;
+    max-width: 1200px;
+}
+
+body {
+    width: 100%;
+}
