@@ -44,6 +44,7 @@ body {
     background-position: center;
     background-size: 100% auto;
     color: var(--main-color);
+    background-blend-mode: overlay;
 }
 
 .no-photo-background {
@@ -56,11 +57,13 @@ body {
     padding: 35px 50px;
 }
 
-.main-article {
-    float: left;
+.main-section::after {
+    content: '';
+    clear: both;
+    display: table;
 }
 
-.article-title {
+.section-title {
     font-family: var(--main-header-font);
     font-size: 190%;
     font-weight: bold;
@@ -69,7 +72,17 @@ body {
     z-index: 0;
 }
 
-.article-title::after {
+.photo-section-title {
+    text-align: center;
+    color: var(--main-color-theme);
+    font-family: var(--main-header-font);
+    font-size: 3.5em;
+    font-weight: bolder;
+    margin: 0 0 25px;
+    font-variant: small-caps;
+}
+
+.section-title::after {
     content: '';
     width: 325px;
     height: 20px;
@@ -81,13 +94,54 @@ body {
     z-index: -1;
 }
 
+.main-article {
+    float: left;
+    border: 1px solid var(--main-color);
+    padding: 20px 45px 30px;
+    text-align: justify;
+    font-family: var(--main-basic-font);
+}
+
+.article-title {
+    font-size: 140%;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
 .article-content {
     font-family: var(--main-basic-font);
-    font-size: 120%;
+    font-size: 110%;
     margin: 0 5px;
 }
-.main-section::after {
-    content: '';
-    clear: both;
-    display: table;
+
+.article-link-button {
+    width: 90%;
+    height: 40px;
+    margin: 30px 5% 0;
+}
+
+.article-link-button > a:link, .article-link-button > a:visited {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--main-color-theme);
+    color: var(--main-color-theme);
+    font-size: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 38px;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.article-link-button > a:hover {
+    background-color: var(--main-color-theme);
+    color: var(--main-color);
+    font-weight: lighter;
+}
+
+.section-col-3  > article {
+    width: 30%;
+    margin: 20px 1.5%;
 }

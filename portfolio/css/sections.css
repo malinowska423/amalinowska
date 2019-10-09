@@ -5,6 +5,15 @@
     max-width: 40%;
 }
 
-#profile-photo + .main-article {
+#profile-photo + article {
     width: 60%;
+    float: left;
+}
+
+#profile-photo .article-content {
+    font-size: 120%;
+}
+
+#projects-section {
+    background-image: url("../img/projects.jpg");
 }

@@ -7,8 +7,6 @@ header {
     position: relative;
     background-image: url("../img/main_photo_2.jpg");
     background-position: bottom;
-    color: var(--header-light-color);
-    background-blend-mode: overlay;
 }
 
 .header-title {
