@@ -102,6 +102,10 @@ body {
     font-family: var(--main-basic-font);
 }
 
+.no-photo-background .main-article {
+    /*border: 1px solid var(--main-color-dark);*/
+}
+
 .article-title {
     font-size: 140%;
     text-align: center;
@@ -144,4 +148,9 @@ body {
 .section-col-3  > article {
     width: 30%;
     margin: 20px 1.5%;
+}
+
+.section-col-2  > article {
+    width: 44%;
+    margin: 20px 3%;
 }
