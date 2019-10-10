@@ -1,0 +1,30 @@
+@media screen and (max-width: 768px) {
+    .photo-background {
+        background-size: auto 100%;
+    }
+
+    .section-col-3 > article, .section-col-2 > article, .section-col-5 > article {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .section-title::after {
+        left: 45px;
+    }
+
+    article.icon-article {
+        width: 45%;
+        margin: 20px 2.5%;
+    }
+    #profile-photo {
+        max-width: 90%;
+        width: 90%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    #profile-photo + article {
+        width: 90%;
+        margin: auto;
+    }
+}

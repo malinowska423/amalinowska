@@ -84,6 +84,7 @@ body {
 
 .section-title::after {
     content: '';
+    max-width: 70%;
     width: 325px;
     height: 20px;
     background-color: var(--main-color-theme);
