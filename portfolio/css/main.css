@@ -143,6 +143,21 @@ body {
     background-color: var(--main-color-theme);
     color: var(--main-color);
     font-weight: lighter;
+    transition-duration: 0.35s;
+}
+
+.icon-article {
+    float: left;
+    padding: 15px;
+}
+
+.icon-article img {
+    width: 100%;
+}
+
+.icon-article > a:hover > img {
+    filter:invert(100%);
+    transition-duration: 0.5s;
 }
 
 .section-col-3  > article {
@@ -153,4 +168,9 @@ body {
 .section-col-2  > article {
     width: 44%;
     margin: 20px 3%;
+}
+
+.section-col-5  > article {
+    width: 13%;
+    margin: 20px 3.5%;
 }

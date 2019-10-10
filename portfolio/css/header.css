@@ -3,7 +3,7 @@ header {
     --header-title-font: 'Open Sans Condensed', sans-serif;
     --header-subtitle-font: 'Rajdhani', sans-serif;
     --header-light-color: #FFF;
-    height: 85vh;
+    height: 100vh;
     position: relative;
     background-image: url("../img/main_photo_3.jpg");
     background-position: bottom;

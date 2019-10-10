@@ -1,0 +1,18 @@
+/* CONTACT ME SECTION */
+
+
+
+
+/* FOOTER SECTION */
+
+footer {
+    height: 60px;
+    font-family: var(--main-basic-font);
+    font-size: 90%;
+    text-align: center;
+    padding: 20px;
+}
+
+footer  p {
+    opacity: 0.6;
+}
