@@ -1,3 +1,34 @@
 header {
     height: 80vh;
 }
+
+.go-back-to-home {
+    min-height: 100px;
+}
+
+.go-back-to-home a:link, .go-back-to-home a:visited {
+    display: block;
+    margin: auto;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-variant: small-caps;
+    text-transform: uppercase;
+    font-size: 120%;
+    font-family: var(--main-header-font);
+    width: 40%;
+    background-color: var(--main-color-theme);
+    color: var(--main-color);
+    border: 1px solid var(--main-color-theme);
+}
+
+.go-back-to-home a:hover {
+    color: var(--main-color-theme);
+    background: none;
+}
+
+@media screen and (max-width: 768px) {
+    .go-back-to-home a:link, .go-back-to-home a:visited {
+        width: 90%;
+    }
+}

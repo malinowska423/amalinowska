@@ -3,6 +3,10 @@
         background-size: auto 100%;
     }
 
+    .main-section {
+        padding: 25px;
+    }
+
     .section-col-3 > .column, .section-col-2 > .column, .section-col-5 > .column {
         width: 100%;
         margin: 20px 0;
@@ -12,7 +16,8 @@
         left: 45px;
     }
 
-    article.social-icon {
+    .column.social-icon {
+        max-width: 150px;
         width: 45%;
         margin: 20px 2.5%;
     }
