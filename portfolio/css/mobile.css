@@ -3,7 +3,7 @@
         background-size: auto 100%;
     }
 
-    .section-col-3 > article, .section-col-2 > article, .section-col-5 > article {
+    .section-col-3 > .column, .section-col-2 > .column, .section-col-5 > .column {
         width: 100%;
         margin: 20px 0;
     }
@@ -12,7 +12,7 @@
         left: 45px;
     }
 
-    article.icon-article {
+    article.social-icon {
         width: 45%;
         margin: 20px 2.5%;
     }

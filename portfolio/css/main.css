@@ -147,31 +147,31 @@ body {
     transition-duration: 0.35s;
 }
 
-.icon-article {
+.social-icon {
     float: left;
     padding: 15px;
 }
 
-.icon-article img {
+.social-icon img {
     width: 100%;
 }
 
-.icon-article > a:hover > img {
+.social-icon > a:hover > img {
     filter:invert(100%);
     transition-duration: 0.5s;
 }
 
-.section-col-3  > article {
+.section-col-3  > .column {
     width: 30%;
     margin: 20px 1.5%;
 }
 
-.section-col-2  > article {
+.section-col-2  > .column {
     width: 44%;
     margin: 20px 3%;
 }
 
-.section-col-5  > article {
+.section-col-5  > .column {
     width: 13%;
     margin: 20px 3.5%;
 }
