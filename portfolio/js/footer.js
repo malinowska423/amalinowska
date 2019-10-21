@@ -19,7 +19,7 @@ function loadContact() {
         '                <a href="mailto:am@amalinowska.pl" target="_blank"><img src="https://amalinowska.pl/portfolio/img/mail.png" alt="E-mail"></a>\n' +
         '            </div>\n' +
         '            <div class="column social-icon">\n' +
-        '                <a href="../index.html" target="_blank"><img src="https://amalinowska.pl/portfolio/img/gallery.png" alt="Gallery"></a>\n' +
+        '                <a href="https://amalinowska.pl" target="_blank"><img src="https://amalinowska.pl/portfolio/img/gallery.png" alt="Gallery"></a>\n' +
         '            </div>\n' +
         '        </section>')
 }

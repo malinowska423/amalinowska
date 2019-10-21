@@ -161,6 +161,10 @@ body {
     transition-duration: 0.5s;
 }
 
+.column {
+    display: block;
+}
+
 .section-col-3  > .column {
     width: 30%;
     margin: 20px 1.5%;

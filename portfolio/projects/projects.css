@@ -27,6 +27,29 @@ header {
     background: none;
 }
 
+.project-section-title {
+    text-align: left;
+    font-size: 140%;
+    margin: 10px auto;
+}
+
+.project-section-content {
+    text-align: justify;
+    text-indent: 12px;
+    margin: 10px 15px;
+}
+
+.project-section-content > a:link, a.project-section-content > a:visited {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--main-color-dark);
+    font-style: italic;
+}
+
+.project-section-content > a:hover {
+    opacity: .9;
+    color: var(--main-color-dark);
+}
 @media screen and (max-width: 768px) {
     .go-back-to-home a:link, .go-back-to-home a:visited {
         width: 90%;
