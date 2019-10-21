@@ -163,6 +163,7 @@ body {
 
 .column {
     display: block;
+    float: left;
 }
 
 .section-col-3  > .column {
