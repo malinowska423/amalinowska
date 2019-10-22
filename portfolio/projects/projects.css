@@ -54,4 +54,13 @@ header {
     .go-back-to-home a:link, .go-back-to-home a:visited {
         width: 90%;
     }
+
+    .main-article {
+        margin: 0;
+        padding: 0;
+    }
+
+    .gist {
+        width: 85vw;
+    }
 }
