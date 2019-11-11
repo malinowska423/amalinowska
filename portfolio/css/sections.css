@@ -1,13 +1,15 @@
 #profile-photo {
     display: block;
     float: right;
-    height: 250px;
-    max-width: 40%;
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
 }
 
 #profile-photo + article {
-    width: 60%;
     float: left;
+    width: 90%;
+    margin: auto;
 }
 
 #profile-photo .article-content {

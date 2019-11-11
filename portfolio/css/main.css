@@ -42,7 +42,7 @@ body {
     background-attachment: fixed;
     background-clip: border-box;
     background-position: center;
-    background-size: 100% auto;
+    background-size: auto 100%;
     color: var(--main-color);
     background-blend-mode: overlay;
 }
@@ -54,7 +54,7 @@ body {
 
 .main-section {
     min-height: 200px;
-    padding: 35px 50px;
+    padding: 25px;
 }
 
 .main-section::after {
@@ -91,14 +91,13 @@ body {
     display: block;
     position: absolute;
     bottom: -3px;
-    left: 65px;
+    left: 45px;
     z-index: -1;
 }
 
 .main-article {
-    float: left;
     border: 1px solid var(--main-color);
-    padding: 20px 45px 30px;
+    padding: 20px;
     text-align: justify;
     font-family: var(--main-basic-font);
 }
@@ -147,36 +146,19 @@ body {
     transition-duration: 0.35s;
 }
 
-.social-icon {
-    float: left;
-    padding: 15px;
-}
 
-.social-icon img {
-    width: 100%;
-}
-
-.social-icon > a:hover > img {
-    filter:invert(100%);
-    transition-duration: 0.5s;
-}
 
 .column {
     display: block;
     float: left;
 }
 
-.section-col-3  > .column {
-    width: 30%;
-    margin: 20px 1.5%;
+
+.section-col-3 > .column, .section-col-2 > .column, .section-col-5 > .column {
+    width: 100%;
+    margin: 20px 0;
 }
 
-.section-col-2  > .column {
-    width: 44%;
-    margin: 20px 3%;
-}
-
-.section-col-5  > .column {
-    width: 13%;
-    margin: 20px 3.5%;
+#gallery {
+    display: none;
 }

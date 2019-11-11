@@ -7,13 +7,15 @@ header {
     position: relative;
     background-image: url("../img/main_photo_3.JPG");
     background-position: bottom;
+    display: flex;
+    flex-direction: column;
 }
 
 .header-title {
     font-family: var(--header-title-font);
     font-weight: 100;
-    margin: 0 auto 35px;
     font-size: 300%;
+    margin-bottom: 30px;
 }
 
 .header-subtitle {
@@ -24,13 +26,13 @@ header {
 #title-container {
     text-align: center;
     font-weight: lighter;
-    padding: 55px 20px;
     border: 1px solid var(--header-light-color);
     min-width: 300px;
+    min-height: 25vh;
     width: 40%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
 }

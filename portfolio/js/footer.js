@@ -1,5 +1,5 @@
 function loadFooter() {
-    document.write('<div class="center"><p>2019 &copy; Aleksandra Malinowska | All rights reserved</p></div>')
+    document.write('<div class="center"><p>2019 &copy; Aleksandra Malinowska | All rights reserved</p></div>');
 }
 
 function loadContact() {
@@ -21,5 +21,5 @@ function loadContact() {
         '            <div class="column social-icon">\n' +
         '                <a href="https://amalinowska.pl" target="_blank"><img src="https://amalinowska.pl/portfolio/img/gallery.png" alt="Gallery"></a>\n' +
         '            </div>\n' +
-        '        </section>')
+        '        </section>');
 }

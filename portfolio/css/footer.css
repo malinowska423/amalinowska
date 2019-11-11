@@ -1,6 +1,21 @@
 /* CONTACT ME SECTION */
 
+.social-icon {
+    float: left;
+    padding: 15px;
+    max-width: 150px;
+    width: 45%;
+    margin: 20px 2.5%;
+}
 
+.social-icon img {
+    width: 100%;
+}
+
+.social-icon > a:hover > img {
+    filter: invert(100%);
+    transition-duration: 0.5s;
+}
 
 
 /* FOOTER SECTION */
@@ -15,4 +30,10 @@ footer {
 
 footer  p {
     opacity: 0.6;
+}
+
+@media (scripting: none) {
+    footer::after {
+        content: 'You have JavaScript disabled in your browser. Please turn it on to see full content. | Copyright 2019 Aleksandra Malinowska | All rights reserved';
+    }
 }
