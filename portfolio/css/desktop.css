@@ -1,6 +1,6 @@
 @media screen and (min-width: 1000px) {
     .photo-background {
-        background-size: 100% auto;
+        /*background-size: 100% auto;*/
     }
 
     .main-section {
@@ -60,5 +60,12 @@
     #gallery > img {
         display: block;
         max-width: 30%;
+    }
+}
+
+
+@media (min-aspect-ratio: 3/2) {
+    .photo-background {
+        background-size: 100% auto;
     }
 }
