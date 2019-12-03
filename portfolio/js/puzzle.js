@@ -1,5 +1,4 @@
-const PUZZLE_DIFFICULTY = 4; /*plansza 4x4*/
-const PUZZLE_HOVER_TINT = `#009900`; /*kolor tla puzzla doc.*/
+const PUZZLE_HOVER_TINT = `#0099e6`; /*kolor tla puzzla doc.*/
 let _canvas;
 let _stage; /*kontekst 2D*/
 let _img; /*załadowany obrazek*/
@@ -9,13 +8,13 @@ let _puzzleHeight; /*wysoko´s´c układanki*/
 let _pieceWidth; /*szeroko´s´c puzzla*/
 let _pieceHeight; /*wysoko´s´c puzzla*/
 let _currentPiece; /*aktualnie przeci ˛agany*/
-let _currentDropPiece; /*puzzle na jaki upuszczamy*/
 let _mouse; /*x,y - pozycja wska´znika myszy*/
 let _puzzleCols = 4;
 let _puzzleRows = 4;
 let _maxPosition = _puzzleCols * _puzzleRows;
 let _started = false;
 let _imageUrl = '../img/puzzle/puzzle_7.jpg';
+let _canvasScale;
 
 function initCanvas() {
     console.log('init canvas');
@@ -53,9 +52,12 @@ function initPuzzle() { /*inicjalizacja pierwotna i na replay*/
     _pieces = [];
     _mouse = {x: 0, y: 0};
     _currentPiece = null; /*na wypadek replay*/
-    _currentDropPiece = null; /*na wypadek replay*/
     _stage.drawImage(_img, 0, 0, _puzzleWidth, _puzzleHeight,
         0, 0, _puzzleWidth, _puzzleHeight);
+    _canvasScale = _canvas.width / _canvas.clientWidth;
+    window.onresize = () => {
+        _canvasScale = _canvas.width / _canvas.clientWidth;
+    }
     createTitle("Click to Start Puzzle");
     buildPieces();
 }
@@ -82,16 +84,31 @@ function buildPieces() {
     }
     _pieces.push({order: _maxPosition - 1, active: false});
     console.log(_pieces);
-    document.getElementById('canvas').onmousedown = shufflePuzzle;
-    // shufflePuzzle();
+    _canvas.onmousedown = shufflePuzzle;
+    document.onmousedown = null;
 }
 
 
-function shufflePuzzle() {
+function updateMouse(e) {
+    _mouse.x = (e.pageX - _canvas.offsetLeft) * _canvasScale;
+    _mouse.y = (e.pageY - _canvas.offsetTop) * _canvasScale;
+}
+
+function shufflePuzzle(e) {
     console.log('shuffle puzzle');
+    updateMouse(e);
+    console.log(_mouse);
+    // if (_mouse.x < 0 || _mouse.y < 0 || _mouse.x > _puzzleWidth || _mouse.y > _puzzleHeight) {
+    //     return;
+    // }
     // do {
-    _pieces = shuffleArray(_pieces);
+    //     _pieces = shuffleArray(_pieces);
+    //     console.log("can be solved ", isSolvable());
     // } while (!isSolvable());
+    _pieces = shuffleArray(_pieces);
+    if (!isSolvable()) {
+        [_pieces[_maxPosition - 1], _pieces[_maxPosition - 2]] = [_pieces[_maxPosition - 2], _pieces[_maxPosition - 1]];
+    }
     // console.error( _pieces);
     // console.error(_pieces);
     _stage.clearRect(0, 0, _puzzleWidth, _puzzleHeight);
@@ -102,7 +119,8 @@ function shufflePuzzle() {
         piece.pos = i;
         drawPuzzleBoard(piece);
     }
-    document.onmousedown = onPuzzleClick;
+    _canvas.onmousedown = onPuzzleClick;
+    document.onmousedown = null;
 }
 
 
@@ -144,16 +162,17 @@ function getPieceRow(position) {
 function onPuzzleClick(e) {
     console.log("click");
 
-    _mouse.x = e.pageX - _canvas.offsetLeft;
-    _mouse.y = e.pageY - _canvas.offsetTop;
-    if (_mouse.x === e.x || _mouse.y === e.y) {
-        return;
-    }
+    updateMouse(e);
+    // if (_mouse.x < 0 || _mouse.y < 0 || _mouse.x > _puzzleWidth || _mouse.y > _puzzleHeight) {
+    //     return;
+    // }
     console.log(_mouse);
 
     _currentPiece = checkPieceClicked();
+    console.error(_currentPiece);
     if (_currentPiece != null && _currentPiece.active) {
         let move = canMove(_currentPiece);  //available position
+        console.log('move: ', move);
         if (move >= 0) {
             //can move piece
             let now = _currentPiece.pos;
@@ -163,6 +182,7 @@ function onPuzzleClick(e) {
             resetPuzzleAndCheckWin();
         }
     }
+    document.onmousemove = updatePuzzle;
 }
 
 function checkPieceClicked() {
@@ -190,7 +210,7 @@ function canMove() {
     position = _currentPiece.pos + 1;
     if (position >= 0 && position < _maxPosition && !_pieces[position].active) return position;
     //bottom
-    position = _currentPiece.pos + _puzzleCols;
+    position = _currentPiece.pos - (-_puzzleCols);
     if (position >= 0 && position < _maxPosition && !_pieces[position].active) return position;
     //left
     position = _currentPiece.pos - 1;
@@ -232,7 +252,7 @@ function getInvCount() {
     let inv_count = 0;
     for (let i = 0; i < _maxPosition - 1; i++) {
         for (let j = i + 1; j < _maxPosition; j++) {
-            if (_pieces[j].pos && _pieces[i].pos && _pieces[i].pos > _pieces[j].pos)
+            if (_pieces[j].active && _pieces[i].active && _pieces[i].pos > _pieces[j].pos)
                 inv_count++;
         }
     }
@@ -240,10 +260,10 @@ function getInvCount() {
 }
 
 function findXPosition() {
-    for (let i = _puzzleCols - 1; i >= 0; i--) {
-        for (let j = _puzzleCols - 1; j >= 0; j--) {
-            if (!_pieces[i][j].active)
-                return _puzzleCols - i;
+    for (let i = _pieces.length - 1; i >= 0; i--) {
+        if (_pieces[i].order === 0) {
+            const pos = Math.abs(_pieces.length - i - 1);
+            return Math.floor(pos / _puzzleCols);
         }
     }
 }
@@ -259,10 +279,10 @@ function isSolvable() {
     else     // grid is even
     {
         let pos = findXPosition();
-        if (pos & 1)
-            return !(invCount & 1);
+        if (pos % 2 === 1)
+            return invCount % 2 === 0;
         else
-            return invCount & 1;
+            return invCount % 2 === 1;
     }
 }
 
@@ -298,4 +318,37 @@ function onFailure(url) {
 function loadFull(name) {
     var obietnica = getImage("../img/puzzle/" + name);
     obietnica.then(onSuccess).catch(onFailure);
+}
+
+
+function updatePuzzle(e) {
+    updateMouse(e);
+    _stage.clearRect(0, 0, _puzzleWidth, _puzzleHeight);
+    let i;
+    let piece;
+    for (i = 0; i < _pieces.length; i++) {
+        piece = _pieces[i];
+        drawPuzzleBoard(piece);
+        let xPos = getPieceCol(piece.pos) * _pieceWidth;
+        let yPos = getPieceRow(piece.pos) * _pieceHeight;
+
+        if (_mouse.x >= xPos && _mouse.x <=
+            (xPos + _pieceWidth) && _mouse.y >= yPos && _mouse.y <= (yPos + _pieceHeight) && piece.active) {
+            _stage.save();
+            _stage.globalAlpha = .4;
+            _stage.fillStyle = PUZZLE_HOVER_TINT;
+            console.log(xPos, ' ',
+                yPos, ' ', _pieceWidth, ' ',
+                _pieceHeight);
+            _stage.fillRect(xPos,
+                yPos, _pieceWidth,
+                _pieceHeight);
+            _stage.restore();
+        }
+    }
+    // _stage.save();
+    // _stage.globalAlpha = .6;
+    // _stage.drawImage(_img, _currentPiece.sx, _currentPiece.sy, _pieceWidth, _pieceHeight, _mouse.x - (_pieceWidth / 2), _mouse.y - (_pieceHeight / 2), _pieceWidth, _pieceHeight);
+    // _stage.restore();
+    // _stage.strokeRect(_mouse.x - (_pieceWidth / 2), _mouse.y - (_pieceHeight / 2), _pieceWidth, _pieceHeight);
 }
