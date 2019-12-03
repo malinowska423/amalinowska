@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>AM | Chatka Kubusia Puchatka</title>
+    <title>AM | Układanka "Piętnastka"</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Chatka Kubusia Puchatka" property="og:title">
     <meta content="https://amalinowska.pl/img/logo.png" property="og:image">
@@ -14,6 +14,7 @@
     <link href="../css/footer.css" rel="Stylesheet" type="text/css"/>
     <link href="../css/desktop.css" rel="Stylesheet" type="text/css"/>
     <link href="projects.css" rel="Stylesheet" type="text/css"/>
+    <link href="fifteen.css" rel="Stylesheet" type="text/css"/>
     <script src="../js/footer.js"></script>
     <script src="../js/puzzle.js"></script>
 </head>
@@ -27,9 +28,38 @@
 <div class="no-photo-background full-width">
     <section class="center main-section">
         <h2 class="section-title">Układanka "Piętnastka"</h2>
-        <article>
+        <article class="main-article">
+            <h4 class="article-title project-section-title">Co i jak?</h4>
+            <p class="article-content project-section-content">"Piętnastka" to kultowa układanka polegająca na ułożeniu
+                obrazka, który został podzielony w siatce 4x4. Ostatni element zostaje usunięty z układanki, aby
+                umożliwić przesuwanie puzzli. Tym sposobem mamy do ułożenia 15 kafelków, które finalnie połączą się w
+                obraz.</p>
+            <p class="article-content project-section-content">Poniżej przedstawiam Ci moją implementację tej
+                niezapomnianej gry z dzieciństwa. Ustaw potrzebne parametry, wybierz ulubiony obrazek i do dzieła.
+                Powodzenia!</p>
             <!--          width="1000" height="1000" style="width: 100%;"   -->
+        </article>
+        <article class="main-article">
+            <h4 class="article-title project-section-title">Zabaw się</h4>
+            <div id="puzzle-menu">
+                <label for="cols-input">Liczba kolumn</label><input id="cols-input" min="2" type="number" value="4">
+                <label for="rows-input">Liczba wierszy</label><input id="rows-input" min="2" type="number" value="4">
+                <p id="chosen-img">Wybrano obrazek: puzzle_7.jpg</p>
+                <button id="new-game-btn" onclick="initCanvas()" type="button">Nowa gra</button>
+            </div>
             <canvas id="canvas"></canvas>
+        </article>
+        <article class="main-article" id="gallery">
+            <h4 class="article-title project-section-title">Galeria obrazków</h4>
+            <div>
+                <script>
+                    let n = 12;
+                    for (let i = 1; i <= n; i++) {
+                        document.write('<img src="../img/puzzle/thumbs/puzzle_' + i + '.jpg" alt="puzzle' + i + '" onclick="loadFull(\'puzzle_' + i + '.jpg\')">')
+                    }
+                </script>
+            </div>
+
         </article>
     </section>
 </div>

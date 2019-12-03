@@ -12,14 +12,17 @@ let _currentPiece; /*aktualnie przeci ˛agany*/
 let _currentDropPiece; /*puzzle na jaki upuszczamy*/
 let _mouse; /*x,y - pozycja wska´znika myszy*/
 let _puzzleCols = 4;
-let _puzzleRows = 3;
-let _maxPosition = 12;
+let _puzzleRows = 4;
+let _maxPosition = _puzzleCols * _puzzleRows;
+let _started = false;
+let _imageUrl = '../img/puzzle/puzzle_7.jpg';
 
 function initCanvas() {
     console.log('init canvas');
+    _started = true;
     _img = new Image();
     _img.addEventListener('load', onImage);
-    _img.src = "../img/puzzle.JPG";
+    _img.src = _imageUrl;
 }
 
 function onImage() {
@@ -33,6 +36,9 @@ function setCanvas() {
     console.log('set canvas');
     _canvas = document.getElementById('canvas');
     _stage = _canvas.getContext('2d');
+    _puzzleCols = document.getElementById('cols-input').value;
+    _puzzleRows = document.getElementById('rows-input').value;
+    _maxPosition = _puzzleRows * _puzzleCols;
     _canvas.width = _img.width;
     _canvas.height = _img.height;
     _puzzleWidth = _canvas.width;
@@ -76,7 +82,8 @@ function buildPieces() {
     }
     _pieces.push({order: _maxPosition - 1, active: false});
     console.log(_pieces);
-    document.onmousedown = shufflePuzzle;
+    document.getElementById('canvas').onmousedown = shufflePuzzle;
+    // shufflePuzzle();
 }
 
 
@@ -139,6 +146,10 @@ function onPuzzleClick(e) {
 
     _mouse.x = e.pageX - _canvas.offsetLeft;
     _mouse.y = e.pageY - _canvas.offsetTop;
+    if (_mouse.x === e.x || _mouse.y === e.y) {
+        return;
+    }
+    console.log(_mouse);
 
     _currentPiece = checkPieceClicked();
     if (_currentPiece != null && _currentPiece.active) {
@@ -210,6 +221,7 @@ function resetPuzzleAndCheckWin() {
 
 function gameOver() {
     console.log('game over');
+    _started = false;
     document.onmousedown = null;
     document.onmousemove = null;
     document.onmouseup = null;
@@ -252,4 +264,38 @@ function isSolvable() {
         else
             return invCount & 1;
     }
+}
+
+
+function getImage(url) {
+    return new Promise(
+        function (resolve, reject) {
+            var img = new Image();
+            img.onload = function () {
+                resolve(url);
+            };
+            img.onerror = function () {
+                reject(url);
+            };
+            img.src = url;
+        }
+    );
+}
+
+function onSuccess(url) {
+    console.log('sucesssssss');
+    _imageUrl = url;
+    document.getElementById('chosen-img').innerText = 'Wybrano obrazek: ' + url.split('/').reverse()[0];
+    // document.getElementById("obrazek").src = url;
+}
+
+function onFailure(url) {
+    console.log("Error loading " + url);
+}
+
+/*loadFull wywoływana na onclick na obrazku skmpresowanym */
+
+function loadFull(name) {
+    var obietnica = getImage("../img/puzzle/" + name);
+    obietnica.then(onSuccess).catch(onFailure);
 }
