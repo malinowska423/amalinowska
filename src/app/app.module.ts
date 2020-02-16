@@ -14,8 +14,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule,
-    FlexLayout
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
