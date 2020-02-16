@@ -6,6 +6,10 @@ import {AppComponent} from './app.component';
 import {MaterialModule} from './modules/material/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {HomeModule} from './modules/home/home.module';
+import {GalleryModule} from './modules/gallery/gallery.module';
+import {ProjectsModule} from './modules/projects/projects.module';
+import {CvModule} from './modules/cv/cv.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HomeModule,
+    GalleryModule,
+    ProjectsModule,
+    CvModule
   ],
   providers: [],
   bootstrap: [AppComponent]
