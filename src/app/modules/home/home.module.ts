@@ -8,6 +8,7 @@ import {IntroductionComponent} from './introduction/introduction.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from '../material/material.module';
+import {AppRoutingModule} from '../../app-routing.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {MaterialModule} from '../material/material.module';
     CommonModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ],
   exports: [
     FooterComponent, MenuComponent

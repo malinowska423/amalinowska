@@ -8,12 +8,15 @@
   <ng-container *ngIf="isMenuOpened">
     <div id="menu" fxFlex fxLayout="row no-wrap" fxLayoutAlign="start stretch" fxFlexOrder="4">
       <img ngClass.lt-lg="d-none" src="../../../../assets/menu_bg.png" alt="">
-      <div fxFlex="">
-        <!--      <a class="menu-item"><img src=""/></a>-->
-        <a>CV</a>
-        <a>Galeria</a>
-        <a>Projekty</a>
-        <a>Główna</a>
+      <div id="menu-list" fxFlex fxLayout="column" fxLayout.gt-md="row no-wrap" fxLayoutAlign="center stretch">
+        <a routerLink="/cv"
+           routerLinkActive="active-link"><img src="../../../../assets/cv_icon.png" alt=""/><span>CV</span></a>
+        <a routerLink="/gallery" routerLinkActive="active-link"><img src="../../../../assets/gallery_icon.png"
+                                                                     alt=""/><span>Galeria</span></a>
+        <a routerLink="/projects" routerLinkActive="active-link"><img src="../../../../assets/projects_icon.png"
+                                                                      alt=""/><span>Projekty</span></a>
+        <a ngClass.lt-lg="d-none" routerLink="/" routerLinkActive="active-link"><img
+          src="../../../../assets/home_icon.png" alt=""/><span>Główna</span></a>
       </div>
     </div>
   </ng-container>
