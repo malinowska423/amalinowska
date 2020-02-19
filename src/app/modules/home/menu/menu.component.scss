@@ -164,3 +164,30 @@ img {
 .active-link {
   border-bottom: 4px solid #fff;
 }
+
+nav.full-screen-menu.sticky {
+  top: 0;
+  background-color: #444;
+  height: 6vh;
+
+  #name {
+    background-image: url("../../../../assets/site_name_small_black.png");
+    margin-top: 1.5vh;
+    height: 3vh;
+  }
+
+  #menu {
+    margin: 0;
+
+    #menu-list a:hover {
+      span {
+        bottom: 5px;
+      }
+
+      img {
+        //margin-top: 3px;
+      }
+    }
+  }
+
+}
