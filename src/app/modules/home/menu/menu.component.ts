@@ -32,9 +32,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
 
   checkWindowSize() {
     this.width = window.innerWidth;
-    if (window.innerWidth > 1280) {
-      this.isMenuOpened = true;
-    }
+    this.isMenuOpened = window.innerWidth > 1280;
   }
 
   ngAfterViewInit() {

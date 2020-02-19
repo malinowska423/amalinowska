@@ -2,6 +2,11 @@
 
 $primary: #0591c7;
 $secondary: #64b4f3;
+
+.text-secondary {
+  color: $secondary !important;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
