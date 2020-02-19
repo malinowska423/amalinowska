@@ -1,12 +1,8 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~bootstrap/dist/css/bootstrap.css';
 
 $primary: #0591c7;
 $secondary: #64b4f3;
-
-.text-secondary {
-  color: $secondary !important;
-}
-
+@import '../node_modules/bootstrap/scss/bootstrap';
 * {
   box-sizing: border-box;
   padding: 0;
