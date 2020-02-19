@@ -1,14 +1,14 @@
-<nav fxLayout="row wrap" fxLayoutAlign="center stretch" ngClass.gt-md="full-screen-menu">
+<nav fxLayout="row" fxLayoutAlign="center stretch" ngClass.gt-md="full-screen-menu">
 
-  <div id="name" fxFlexOffset.gt-md="7" fxLayout="column" fxLayoutAlign="center end" fxFlexOrder.gt-md="1"
-       fxFlexOrder.lt-lg="2" fxFlex.lt-lg="50"></div>
-  <div id="logo" fxFlexOrder.gt-md="2" fxFlexOrder.lt-lg="1" fxFlex.lt-lg="20"></div>
+  <div id="name" fxFlexOffset.gt-md="7" fxFlexOrder.gt-md="1" fxFlexOrder.lt-lg="2" fxFlex.lt-lg="50"
+       fxFlex.gt-md="23"></div>
+  <div id="logo" fxFlexOrder.gt-md="2" fxFlexOrder.lt-lg="1" fxFlex="20"></div>
 
   <div id="menu-icon" ngClass.gt-md="d-none" fxFlexOrder="3" fxFlex="20" (click)="openMenu()"></div>
-  <ng-container *ngIf="isMenuOpened">
-    <div id="menu" fxFlex fxLayout="row no-wrap" fxLayoutAlign="start stretch" fxFlexOrder="4">
+  <ng-container *ngIf="true">
+    <div id="menu" fxFlex fxLayout="row no-wrap" fxLayoutAlign="start stretch" fxFlexOrder="4" fxFlex.gt-md="50">
       <img ngClass.lt-lg="d-none" src="../../../../assets/menu_bg.png" alt="">
-      <div id="menu-list" fxFlex fxLayout="column" fxLayout.gt-md="row no-wrap" fxLayoutAlign="center stretch">
+      <div id="menu-list" fxFlex fxLayout.lt-lg="column" fxLayout.gt-md="row no-wrap" fxLayoutAlign="center stretch">
         <a routerLink="/cv"
            routerLinkActive="active-link"><img src="../../../../assets/cv_icon.png" alt=""/><span>CV</span></a>
         <a routerLink="/gallery" routerLinkActive="active-link"><img src="../../../../assets/gallery_icon.png"
