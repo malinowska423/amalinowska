@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "amalinowska-423"
+  },
+  "targets": {
+    "amalinowska-423": {
+      "hosting": {
+        "amalinowska": [
+          "amalinowska-423"
+        ]
+      }
+    }
+  }
+}
