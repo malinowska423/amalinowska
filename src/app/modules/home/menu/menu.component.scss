@@ -1,6 +1,9 @@
-$background-color: #305878;
+@import "../../../../color-palette";
+
+$background-color: $light-blue;
 * {
   transition-duration: 300ms;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 .background-icon {
@@ -15,7 +18,7 @@ nav {
   top: 0;
   z-index: 10000;
   width: 100%;
-  background-color: #333;
+  background-color: $dark;
 
   #name {
     @extend .background-icon;
@@ -41,8 +44,8 @@ nav {
   }
 
   #menu {
-    background-color: #333;
-    color: #fff;
+    background-color: $dark;
+    color: $light;
     position: fixed;
     top: 8vh;
     width: 100%;
@@ -54,7 +57,7 @@ nav {
       margin: 10px 5px 10px 5%;
 
       &:link, &:visited {
-        color: #fff;
+        color: $light;
       }
 
       &:hover {
@@ -72,13 +75,13 @@ nav {
 
 
 nav.full-screen-menu {
-  height: 10vh;
-  top: 30px;
+  height: 9vh;
+  top: 50px;
   background-color: transparent;
 
   #name {
     max-width: 100%;
-    background-image: url("../../../../assets/site_name_small.png");
+    //background-image: url("../../../../assets/site_name_small.png");
     margin-top: 3vh;
   }
 
@@ -111,12 +114,13 @@ nav.full-screen-menu {
       width: 20%;
       height: 100%;
       margin: 0 5% 0 0;
-      font-weight: bold;
+      font-weight: 400;
+      font-size: 14px;
       position: relative;
       //border: 1px solid violet;
 
       &:link, &:visited {
-        color: #fff;
+        color: $light;
       }
 
       img {
@@ -162,12 +166,12 @@ img {
 }
 
 .active-link {
-  border-bottom: 4px solid #fff;
+  border-bottom: 4px solid $light;
 }
 
 nav.full-screen-menu.sticky {
   top: 0;
-  background-color: #444;
+  background-color: $dark;
   height: 6vh;
 
   #name {

@@ -1,7 +1,9 @@
+@import "../../../../color-palette";
+
 header {
-  min-height: 60vh;
-  background-color: #b8edf6;
-  padding-top: 100px;
+  min-height: 80vh;
+  background-color: $dark;
+  padding-top: 150px;
 }
 
 
@@ -13,6 +15,35 @@ header {
   }
 }
 
-#info {
+#intro-text {
+  width: auto !important;
+  font-family: 'Merriweather Sans', sans-serif;
+  text-transform: uppercase;
+  margin-right: 300px;
+  margin-top: 160px;
+
+  h1 {
+    font-weight: 800;
+    font-size: 80px;
+    color: #64b4f3;
+  }
+
+  h2 {
+    font-weight: 300;
+    font-size: 29px;
+    text-transform: lowercase;
+    //color: rgba(0,0,0,.6);
+    color: rgba(255, 255, 255, .6);
+    //color: $light;
+  }
+
+  h3 {
+    font-weight: 800;
+    font-size: 27px;
+    margin: 0 !important;
+    //color: rgba(0,0,0,.6);
+    color: rgba(255, 255, 255, .6);
+    //color: $light;
+  }
 
 }
