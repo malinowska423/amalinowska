@@ -5,13 +5,15 @@ import {MainPageComponent} from './modules/home/main-page/main-page.component';
 import {GalleryComponent} from './modules/gallery/gallery/gallery.component';
 import {ProjectsComponent} from './modules/projects/projects/projects.component';
 import {CvComponent} from './modules/cv/cv/cv.component';
+import {TemporaryHomepageComponent} from './modules/home/temporary-homepage/temporary-homepage.component';
 
 
 const routes: Routes = [
-  {path: 'cv', component: CvComponent},
-  {path: 'projects', component: ProjectsComponent},
-  {path: 'gallery', component: GalleryComponent},
-  {path: '', component: MainPageComponent},
+  // {path: 'cv', component: CvComponent},
+  // {path: 'projects', component: ProjectsComponent},
+  // {path: 'gallery', component: GalleryComponent},
+  // {path: '', component: MainPageComponent},
+  {path: '', component: TemporaryHomepageComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 

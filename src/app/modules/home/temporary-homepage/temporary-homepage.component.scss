@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+@import "../../../../color-palette";
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+:host {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  background-color: #222;
+}
+
+#info-box {
+  @extend .center-content;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 40%;
+  left: 0;
+  background-color: rgba(34, 34, 34, .9);
+  z-index: 9999;
+}
+
+
+header {
+  @extend .center-content;
+  color: #fff;
+  width: 90%;
+  max-width: 700px;
+  z-index: 10000;
+
+  h1 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 300;
+    font-size: 90px;
+    line-height: 70px;
+    margin: 0 !important;
+  }
+
+  hr {
+    border-top: 1px solid #aaa !important;
+    width: 50%;
+    margin: 2em;
+  }
+}
+
+#contact {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+
+  a {
+    font-family: 'Handlee', cursive;
+    font-size: 23px;
+    line-height: 20px;
+    margin: 0 30px 20px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    svg {
+      display: block;
+    }
+
+    p {
+      margin: 0 !important;
+      margin-left: 10px !important;
+    }
+  }
+
+  a:link, a:visited {
+    color: rgba(255, 255, 255, .7);
+    transition-duration: 500ms;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: $light-blue;
+  }
+}
+
+
+#blue-column {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20%;
+  width: 20%;
+  background-color: #034863;
+  -webkit-box-shadow: inset 7px 0 9px -7px rgba(34, 34, 34, .7), inset -7px 0 9px -7px rgba(34, 34, 34, .7);
+  box-shadow: inset 7px 0 9px -7px rgba(34, 34, 34, .7), inset -7px 0 9px -7px rgba(34, 34, 34, .7);
+}
+
+
+#logo-box {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 25%;
+  width: 50%;
+  object-fit: contain !important;
+  z-index: 8000;
+
+}

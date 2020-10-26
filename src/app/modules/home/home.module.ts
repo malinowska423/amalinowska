@@ -9,10 +9,11 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from '../material/material.module';
 import {AppRoutingModule} from '../../app-routing.module';
+import {TemporaryHomepageComponent} from './temporary-homepage/temporary-homepage.component';
 
 
 @NgModule({
-  declarations: [MenuComponent, FooterComponent, MainPageComponent, PageNotFoundComponent, IntroductionComponent],
+  declarations: [MenuComponent, FooterComponent, MainPageComponent, PageNotFoundComponent, IntroductionComponent, TemporaryHomepageComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,
