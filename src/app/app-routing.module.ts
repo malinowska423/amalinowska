@@ -12,8 +12,8 @@ const routes: Routes = [
   // {path: 'cv', component: CvComponent},
   // {path: 'projects', component: ProjectsComponent},
   // {path: 'gallery', component: GalleryComponent},
-  // {path: '', component: MainPageComponent},
-  {path: '', component: TemporaryHomepageComponent},
+  {path: '', component: MainPageComponent},
+  // {path: '', component: TemporaryHomepageComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 

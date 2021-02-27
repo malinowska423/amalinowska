@@ -7,7 +7,6 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {IntroductionComponent} from './introduction/introduction.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MaterialModule} from '../material/material.module';
 import {AppRoutingModule} from '../../app-routing.module';
 import {TemporaryHomepageComponent} from './temporary-homepage/temporary-homepage.component';
 
@@ -18,7 +17,6 @@ import {TemporaryHomepageComponent} from './temporary-homepage/temporary-homepag
     CommonModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    MaterialModule,
     AppRoutingModule
   ],
   exports: [
