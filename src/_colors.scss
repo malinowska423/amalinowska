@@ -1,0 +1,37 @@
+$light-blue: rgba(100, 180, 243, 1);
+$silver: rgba(132, 140, 142, 1);
+$dark-blue: rgba(34, 72, 112, 1);
+$light-green: #0db08f;
+
+$primary: $dark-blue;
+$secondary: $light-blue;
+$accent: $light-green;
+
+$light: #fcfcfc;
+$dark: #222;
+
+$lighter: #fff;
+$light-mid: #f0f0f0;
+$darker: #1d1d1d;
+$dark-mid: #2f3132;
+$grey: $silver;
+
+$extra-colors: (
+  "lighter": $lighter,
+  "light-mid": $light-mid,
+  "darker": $darker,
+  "dark-mid": $dark-mid,
+  "accent": $accent,
+  "grey": $grey
+);
+
+
+@each $color, $hex in $extra-colors {
+  .bg-#{$color} {
+    background-color: $hex;
+  }
+
+  .text-#{$color} {
+    color: $hex;
+  }
+}

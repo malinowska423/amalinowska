@@ -9,10 +9,11 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from '../../app-routing.module';
 import {TemporaryHomepageComponent} from './temporary-homepage/temporary-homepage.component';
+import {ScrollDownBtnComponent} from './scroll-down-btn/scroll-down-btn.component';
 
 
 @NgModule({
-  declarations: [MenuComponent, FooterComponent, MainPageComponent, PageNotFoundComponent, IntroductionComponent, TemporaryHomepageComponent],
+  declarations: [MenuComponent, FooterComponent, MainPageComponent, PageNotFoundComponent, IntroductionComponent, TemporaryHomepageComponent, ScrollDownBtnComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,
