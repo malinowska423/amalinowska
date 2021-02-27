@@ -15,13 +15,14 @@
 header {
   color: $light;
   text-align: center;
-  padding: 15px;
-  width: 100%;
+  padding: 10px 45px;
+  //width: 100%;
   max-width: 1280px;
 
   .title {
     //padding-top: 50px;
     font-size: 8em;
+    font-size: 8vw;
     width: fit-content;
     text-shadow: 0 0 9px rgba(150, 150, 150, 1);
   }
@@ -31,4 +32,37 @@ header {
     letter-spacing: .1em;
     color: $light-mid;
   }
+}
+
+@media (max-width: 1280px) {
+  header .title {
+    font-size: 5em;
+  }
+
+  header .subtitle {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 600px) {
+
+  header {
+    padding: 15px;
+  }
+
+  header .title {
+    font-size: 5em;
+  }
+
+  header .subtitle {
+    max-width: 85%;
+    font-size: .85em;
+  }
+}
+
+@media (max-width: 400px) {
+  header .title {
+    font-size: 3em;
+  }
+
 }
