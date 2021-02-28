@@ -35,6 +35,9 @@ export class MenuComponent implements OnInit, AfterViewInit {
     this.isMenuOpened = width > 960;
     if (width > 1280) {
       this.margin = (width - 1280) / 2;
+      if (this.margin > 300) {
+        this.margin = 300;
+      }
     } else {
       this.margin = 30;
     }
