@@ -11,8 +11,8 @@ export class MenuComponent implements OnInit, AfterViewInit {
 
   isMenuOpened = false;
   sticky = false;
-  width = 0;
   menuPosition: any;
+  margin = 0;
 
   constructor() {
   }
@@ -31,8 +31,13 @@ export class MenuComponent implements OnInit, AfterViewInit {
   }
 
   checkWindowSize() {
-    this.width = window.innerWidth;
-    this.isMenuOpened = window.innerWidth > 1280;
+    const width = window.innerWidth;
+    this.isMenuOpened = width > 960;
+    if (width > 1280) {
+      this.margin = (width - 1280) / 2;
+    } else {
+      this.margin = 30;
+    }
   }
 
   ngAfterViewInit() {

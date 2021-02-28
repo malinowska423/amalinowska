@@ -1,0 +1,55 @@
+@mixin ornament-right($size, $color, $offset) {
+
+  .ornament {
+    height: $size;
+  }
+
+  .ornament-right {
+    position: absolute;
+    top: 0;
+    right: $offset;
+
+    .top {
+      width: 0;
+      height: 0;
+      border-top: $size/2 solid $color;
+      border-left: $size/2 solid transparent;
+    }
+
+    .bottom {
+      width: 0;
+      height: 0;
+      border-bottom: $size/2 solid $color;
+      border-left: $size/2 solid transparent;
+    }
+
+  }
+}
+
+@mixin ornament-left($size, $color, $offset) {
+
+  .ornament {
+    height: $size;
+  }
+
+  .ornament-left {
+    position: absolute;
+    top: 0;
+    left: $offset;
+
+    .top {
+      width: 0;
+      height: 0;
+      border-top: $size/2 solid $color;
+      border-right: $size/2 solid transparent;
+    }
+
+    .bottom {
+      width: 0;
+      height: 0;
+      border-bottom: $size/2 solid $color;
+      border-right: $size/2 solid transparent;
+    }
+
+  }
+}

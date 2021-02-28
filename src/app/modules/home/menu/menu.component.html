@@ -1,23 +1,46 @@
-<nav fxLayout="row" fxLayoutAlign="center stretch" ngClass.gt-md="full-screen-menu" #stickyMenu [class.sticky]="sticky">
+<nav fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutAlign.gt-sm="center stretch"
+     ngClass.gt-sm="full-screen-menu"
+     #stickyMenu
+     [class.sticky]="sticky">
 
-  <div id="name" fxFlexOffset.gt-md="7" fxFlexOrder.gt-md="1" fxFlexOrder.lt-lg="2" fxFlex.lt-lg="50"
-       fxFlex.gt-md="23"></div>
-  <div id="logo" fxFlexOrder.gt-md="2" fxFlexOrder.lt-lg="1" fxFlex="20"></div>
+  <div class="ornament ornament-right">
+    <div class="top"></div>
+    <div class="bottom"></div>
+  </div>
+  <div class="ornament ornament-left" ngClass.lt-md="d-none">
+    <div class="top"></div>
+    <div class="bottom"></div>
+  </div>
 
-  <div id="menu-icon" ngClass.gt-md="d-none" fxFlexOrder="3" fxFlex="20" (click)="openMenu()"></div>
-  <ng-container *ngIf="isMenuOpened">
-    <div id="menu" fxFlex fxLayout="row no-wrap" fxLayoutAlign="start stretch" fxFlexOrder="4" fxFlex.gt-md="50">
-      <img ngClass.lt-lg="d-none" src="../../../../assets/menu_bg.png" alt="">
-      <div id="menu-list" fxFlex fxLayout.lt-lg="column" fxLayout.gt-md="row no-wrap" fxLayoutAlign="center stretch">
-        <a routerLink="/cv"
-           routerLinkActive="active-link"><img src="../../../../assets/cv_icon.png" alt=""/><span>CV</span></a>
-        <a routerLink="/gallery" routerLinkActive="active-link"><img src="../../../../assets/gallery_icon.png"
-                                                                     alt=""/><span>Galeria</span></a>
-        <a routerLink="/projects" routerLinkActive="active-link"><img src="../../../../assets/projects_icon.png"
-                                                                      alt=""/><span>Projekty</span></a>
-        <a ngClass.lt-lg="d-none" routerLink="/" routerLinkActive="active-link"><img
-          src="../../../../assets/home_icon.png" alt=""/><span>Główna</span></a>
-      </div>
+  <div id="name" fxFlexOrder.lt-md="2" fxFlex="50" fxFlex.gt-sm="40">
+    <img src="assets/amalinowska_name.svg" alt="amalinowska" [fxFlexOffset.gt-sm]="margin + 'px'">
+  </div>
+
+  <div id="logo" fxFlexOrder.lt-md="1" fxFlex="20">
+    <a routerLink="/"><img src="assets/amalinowska_logo.svg" alt="Aleksandra Malinowska Logo"></a>
+  </div>
+
+  <div id="menu-icon" ngClass.gt-sm="d-none" fxFlex="20" fxFlexOrder="3" (click)="openMenu()">
+    <div id="icon-holder"><i class="bi bi-three-dots-vertical absolute-center"></i></div>
+  </div>
+
+  <div id="menu" fxFlexOrder="4" fxFlex.gt-sm="40" [class.menu-opened]="isMenuOpened" fxLayout.gt-sm="column"
+       fxLayoutAlign.gt-sm="center stretch">
+    <div id="menu-list" fxLayout="column" fxLayout.gt-sm="row no-wrap" fxLayoutAlign="center stretch"
+         [ngStyle]="{'margin-right.px': margin}">
+
+      <a routerLink="/" fragment="about" routerLinkActive="active-link">
+        <span>About</span>
+      </a>
+
+      <a routerLink="/projects" routerLinkActive="active-link">
+        <span>Projects</span>
+      </a>
+
+      <a routerLink="/" fragment="contact" routerLinkActive="active-link">
+        <span>Contact</span>
+      </a>
+
     </div>
-  </ng-container>
+  </div>
 </nav>
