@@ -1,9 +1,11 @@
-@import '~bootstrap/dist/css/bootstrap.css';
+//@import '~bootstrap/dist/css/bootstrap.css';
 
-$primary: #0591c7;
-$secondary: #64b4f3;
+
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import "colors";
+
+$spacer: 2rem;
+
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 //@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
@@ -20,7 +22,8 @@ $secondary: #64b4f3;
 
 html, body {
   width: 100%;
-  background-color: $dark;
+  background-color: $darker;
+  color: $light;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -31,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .all-center {
   width: 95%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0;
 }

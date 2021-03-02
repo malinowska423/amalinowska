@@ -18,6 +18,7 @@ export class ScrollDownBtnComponent implements OnInit {
   scroll(fragment: string) {
     const el = document.getElementById(fragment);
     el.scrollIntoView();
+    // el.scrollTop -= 100;
   }
 
 }

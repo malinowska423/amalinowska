@@ -10,10 +10,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from '../../app-routing.module';
 import {TemporaryHomepageComponent} from './temporary-homepage/temporary-homepage.component';
 import {ScrollDownBtnComponent} from './scroll-down-btn/scroll-down-btn.component';
+import {AboutComponent} from './about/about.component';
 
 
 @NgModule({
-  declarations: [MenuComponent, FooterComponent, MainPageComponent, PageNotFoundComponent, IntroductionComponent, TemporaryHomepageComponent, ScrollDownBtnComponent],
+  declarations: [MenuComponent, FooterComponent, MainPageComponent, PageNotFoundComponent, IntroductionComponent, TemporaryHomepageComponent, ScrollDownBtnComponent, AboutComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,
