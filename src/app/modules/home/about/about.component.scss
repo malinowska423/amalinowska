@@ -28,7 +28,7 @@ $top-margin: 150px;
 
 .sub-photo {
   position: absolute;
-  top: $top-margin + $photo-width * (4/3) * 0.7;
+  top: $top-margin + ($photo-width * (4/3) * 0.7);
   left: $photo-width * 0.55;
   width: 500px;
 
@@ -82,4 +82,102 @@ $top-margin: 150px;
   text-align: justify;
   line-height: 27px;
   border-right: 1px solid $primary;
+}
+
+
+@media (max-width: 1280px) {
+
+  $photo-width: 30vw;
+  $top-margin: 110px;
+
+  .img-wrapper {
+    top: $top-margin;
+    width: 30vw;
+    height: 30vw * (4/3);
+  }
+
+  .sub-photo {
+    top: calc(#{$top-margin} + (#{$photo-width} * (4 / 3) * 0.7));
+    left: $photo-width * 0.55;
+    width: 35vw;
+  }
+
+  .text-wrapper {
+    //width: 70%;
+    max-width: 40%;
+    margin-bottom: 150px;
+  }
+
+  .section-title {
+    margin-top: $top-margin + 50px;
+    margin-right: 0;
+    transform: translateX(-30%);
+  }
+
+  .section-text {
+    padding-right: 7%;
+  }
+}
+
+@media (max-width: 960px) {
+  $photo-width: 30vw;
+  $top-margin: 250px;
+
+  .img-wrapper {
+    top: $top-margin;
+  }
+
+  .sub-photo {
+    top: calc(#{$top-margin} + (#{$photo-width} * (4 / 3) * 0.8));
+  }
+
+  .text-wrapper {
+    margin-bottom: 140px;
+  }
+
+  .section-title {
+    margin-top: $top-margin + 50px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+  $photo-width: 45vw;
+
+  $top-margin: 150px;
+
+  .img-wrapper {
+    top: $top-margin;
+    left: 15vw;
+    width: $photo-width;
+    height: $photo-width * (4/3);
+  }
+
+
+  .sub-photo {
+    position: absolute;
+    top: calc(#{$top-margin} + (#{$photo-width} * (4 / 3) * 0.7));
+    left: ($photo-width * 0.55) + 15vw;
+    width: 45vw;
+  }
+
+  .text-wrapper {
+    width: 65%;
+    max-width: 100%;
+    margin-bottom: 50px;
+    margin-right: 10vw;
+    margin-top: calc((#{$photo-width} * (4 / 3)) + #{$top-margin} + 150px);
+  }
+
+  .section-title {
+    margin-top: 0;
+    margin-right: 100px;
+  }
+
+  .section-text {
+    //padding-right: 100px;
+    font-size: 13px;
+  }
+
 }
