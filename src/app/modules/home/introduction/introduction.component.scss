@@ -34,6 +34,13 @@ header {
   }
 }
 
+app-social-icons {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  opacity: .5;
+}
+
 @media (max-width: 1280px) {
   header .title {
     font-size: 5em;
