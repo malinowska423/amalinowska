@@ -50,9 +50,14 @@ app-social-icons {
   opacity: .5;
 }
 
+app-scroll-down-btn {
+  z-index: 100;
+}
+
 
 #blue-column {
   position: absolute;
+  z-index: 0;
   top: 0;
   bottom: 0;
   right: 20%;
@@ -66,14 +71,25 @@ app-social-icons {
 #logo-box {
   position: absolute;
   top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  left: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 50%;
   object-fit: contain !important;
   z-index: 0;
   opacity: .4;
+  animation: float 4s ease-in-out infinite;
+}
 
+@keyframes float {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  30% {
+    transform: translate(-50%, -55%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
 }
 
 
@@ -85,12 +101,34 @@ app-social-icons {
   header .subtitle {
     max-width: 70%;
   }
+
+  #blue-column {
+    right: 15%;
+    width: 25%;
+  }
+
+  #logo-box {
+    left: 20%;
+    width: 60%;
+    top: 0;
+    transform: none;
+  }
+}
+
+
+@media screen and (max-width: 959px) {
+
+  #logo-box {
+    top: 12%;
+  }
+
 }
 
 @media (max-width: 600px) {
 
   header {
     padding: 15px;
+    padding-bottom: 50px;
   }
 
   header .title {
