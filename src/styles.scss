@@ -62,3 +62,16 @@ body::-webkit-scrollbar-thumb {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+a, a:link, a:visited {
+  color: $primary;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $secondary;
+}
+
+[class^="bi-"]::before, [class*=" bi-"]::before {
+  vertical-align: middle;
+}
