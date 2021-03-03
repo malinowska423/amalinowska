@@ -18,20 +18,23 @@ $darker: #1d1d1d;
 $dark-mid: #2f3132;
 $grey: $silver;
 
-$extra-colors: (
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "accent": $accent,
+  "light": $light,
+  "dark": $dark,
   "lighter": $lighter,
   "light-mid": $light-mid,
   "darker": $darker,
   "dark-mid": $dark-mid,
-  "accent": $accent,
-  "grey": $grey,
-  "secondary": $secondary
+  "grey": $grey
 );
 
 
-@each $color, $hex in $extra-colors {
+@each $color, $hex in $colors {
   .bg-#{$color} {
-    background-color: $hex;
+    background-color: $hex !important;
   }
 
   .text-#{$color} {

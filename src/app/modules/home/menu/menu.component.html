@@ -29,7 +29,8 @@
     <div id="menu-list" fxLayout="column" fxLayout.gt-sm="row no-wrap" fxLayoutAlign="center stretch"
          [ngStyle]="{'margin-right.px': margin}">
 
-      <a routerLink="/" fragment="about" routerLinkActive="active-link">
+      <a routerLink="/" fragment="about" SimpleSmoothScroll scrollTo="about" [duration]="500"
+         routerLinkActive="active-link">
         <span>About</span>
       </a>
 
@@ -37,7 +38,8 @@
         <span>Projects</span>
       </a>
 
-      <a routerLink="/" fragment="contact" routerLinkActive="active-link">
+      <a routerLink="/" fragment="contact" SimpleSmoothScroll scrollTo="contact" [duration]="500"
+         routerLinkActive="active-link">
         <span>Contact</span>
       </a>
 

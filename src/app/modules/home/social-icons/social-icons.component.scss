@@ -23,7 +23,7 @@
   }
 }
 
-@each $color, $hex in $extra-colors {
+@each $color, $hex in $colors {
   :host(.#{$color}) {
     a {
       color: $hex !important;

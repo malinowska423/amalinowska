@@ -12,6 +12,7 @@ import {TemporaryHomepageComponent} from './temporary-homepage/temporary-homepag
 import {ScrollDownBtnComponent} from './scroll-down-btn/scroll-down-btn.component';
 import {AboutComponent} from './about/about.component';
 import {SocialIconsComponent} from './social-icons/social-icons.component';
+import {SimpleSmoothScrollModule} from 'ng2-simple-smooth-scroll';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {SocialIconsComponent} from './social-icons/social-icons.component';
     CommonModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SimpleSmoothScrollModule
   ],
   exports: [
     FooterComponent, MenuComponent
