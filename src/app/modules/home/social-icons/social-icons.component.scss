@@ -1,0 +1,39 @@
+@import "../../../../colors";
+
+:host {
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1;
+
+  }
+}
+
+
+:host(.vertical) {
+  div {
+    flex-direction: column;
+  }
+}
+
+:host(.horizontal) {
+  div {
+    flex-direction: row;
+  }
+}
+
+@each $color, $hex in $extra-colors {
+  :host(.#{$color}) {
+    a {
+      color: $hex !important;
+      transition-duration: 500ms;
+
+      &:hover {
+        opacity: .8;
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+}

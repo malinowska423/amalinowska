@@ -11,10 +11,11 @@ import {AppRoutingModule} from '../../app-routing.module';
 import {TemporaryHomepageComponent} from './temporary-homepage/temporary-homepage.component';
 import {ScrollDownBtnComponent} from './scroll-down-btn/scroll-down-btn.component';
 import {AboutComponent} from './about/about.component';
+import {SocialIconsComponent} from './social-icons/social-icons.component';
 
 
 @NgModule({
-  declarations: [MenuComponent, FooterComponent, MainPageComponent, PageNotFoundComponent, IntroductionComponent, TemporaryHomepageComponent, ScrollDownBtnComponent, AboutComponent],
+  declarations: [MenuComponent, FooterComponent, MainPageComponent, PageNotFoundComponent, IntroductionComponent, TemporaryHomepageComponent, ScrollDownBtnComponent, AboutComponent, SocialIconsComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,
