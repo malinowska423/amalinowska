@@ -17,7 +17,7 @@ nav {
   z-index: 10000;
   width: 100%;
 
-  #name, #menu-icon {
+  #name, #menu-icon, #menu {
     background-color: $bg-color;
   }
 
@@ -58,7 +58,6 @@ nav {
   #menu {
     height: 0;
     overflow: hidden;
-    background-color: $dark;
     color: $light;
     position: fixed;
     top: $nav-height + 2vh;
@@ -124,12 +123,14 @@ nav.full-screen-menu {
 
     img {
       object-position: left;
+      filter: grayscale(100%) brightness(200%);
+      opacity: .6;
     }
   }
 
   #logo img {
     right: 50%;
-    transform: translate(50%, -50%);
+    transform: translate(50%, -50%) scale(0);
     height: $nav-height * 1.7;
   }
 
@@ -174,7 +175,14 @@ nav.full-screen-menu.sticky {
 
     img {
       height: $nav-height - 1vh;
+      transform: translate(50%, -50%) scale(1);
     }
+  }
+
+  #name img {
+    opacity: 1;
+    filter: none;
+
   }
 
   #menu, #menu.menu-opened, #name {
@@ -185,5 +193,17 @@ nav.full-screen-menu.sticky {
 
   @include ornament-right($nav-height, $bg-color, 45vw);
   @include ornament-left($nav-height, $bg-color, 45vw);
+
+}
+
+
+.transparent {
+  #name, #menu-icon, #menu {
+    background-color: transparent;
+  }
+
+  .ornament > * {
+    border-color: transparent !important;
+  }
 
 }
