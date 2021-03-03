@@ -94,6 +94,11 @@ nav {
       &:hover {
         cursor: pointer;
       }
+
+      &.disabled > span, &.disabled:hover > span {
+        color: $grey !important;
+        cursor: auto;
+      }
     }
   }
 

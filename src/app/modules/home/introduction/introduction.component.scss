@@ -4,7 +4,6 @@
   width: 100vw;
   height: 100vh;
   //background-image: url("../../../../assets/bg.png");
-  //background: url("../../../../assets/bg.jpg") rgba(0, 0, 0, .2) no-repeat fixed center;
   background: rgb(1, 55, 77);
   background: -moz-radial-gradient(circle, rgba(1, 55, 77, 1) 7%, rgba(29, 29, 29, 1) 100%);
   background: -webkit-radial-gradient(circle, rgba(1, 55, 77, 1) 7%, rgba(29, 29, 29, 1) 100%);
@@ -77,7 +76,6 @@ app-scroll-down-btn {
   object-fit: contain !important;
   z-index: 0;
   opacity: .4;
-  animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -89,6 +87,12 @@ app-scroll-down-btn {
   }
   100% {
     transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 1280px) {
+  #logo-box {
+    animation: float 4s ease-in-out infinite;
   }
 }
 
