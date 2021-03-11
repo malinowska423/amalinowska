@@ -41,3 +41,15 @@ $colors: (
     color: $hex;
   }
 }
+
+.filter-primary {
+  filter: invert(63%) sepia(82%) saturate(5112%) hue-rotate(168deg) brightness(99%) contrast(93%);
+}
+
+.filter-secondary {
+  filter: invert(72%) sepia(10%) saturate(4486%) hue-rotate(178deg) brightness(98%) contrast(96%);
+}
+
+.filter-accent {
+  filter: invert(71%) sepia(40%) saturate(7287%) hue-rotate(130deg) brightness(90%) contrast(90%);
+}
